@@ -1,0 +1,33 @@
+Create page objects for the Subscribe page (SubscribePage.java),
+and potentially separate page objects for other pages if needed.
+
+// SubscribePage.java
+package com.example.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class SubscribePage {
+
+    private final WebDriver driver;
+
+    public SubscribePage(WebDriver driver) {
+        this.driver = driver;
+    }
+
+    public WebElement getPackageTypeElement(String country) {
+        String xpath = "//label[contains(text(), '" + country + "')]/following-sibling::span";
+        return driver.findElement(By.xpath(xpath));
+    }
+
+    public WebElement getPackagePriceElement(String country) {
+        String xpath = "//label[contains(text(), '" + country + "')]/following-sibling::div/span";
+        return driver.findElement(By.xpath(xpath));
+    }
+
+    public WebElement getCurrencyElement(String country) {
+        String xpath = "//label[contains(text(), '" + country + "')]/preceding-sibling::span";
+        return driver.findElement(By.xpath(xpath));
+    }
+}
