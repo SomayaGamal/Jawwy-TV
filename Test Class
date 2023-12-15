@@ -1,0 +1,40 @@
+Write a test class to validate subscription packages for three countries and print the results to a notepad file (SubscribeTest.java).
+
+// SubscribeTest.java
+package com.example.tests;
+
+import com.example.pages.SubscribePage;
+import com.example.utilities.BaseTest;
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class SubscribeTest extends BaseTest {
+
+    @Test
+    public void validateSubscriptionPackages() {
+        SubscribePage subscribePage = new SubscribePage(driver);
+
+        String[] countries = {"Country1", "Country2", "Country3"};
+
+        for (String country : countries) {
+            String packageType = subscribePage.getPackageTypeElement(country).getText();
+            String packagePrice = subscribePage.getPackagePriceElement(country).getText();
+            String currency = subscribePage.getCurrencyElement(country).getText();
+
+            // Print results to notepad
+            writeToNotepad("Country: " + country + ", Package Type: " + packageType +
+                    ", Package Price: " + packagePrice + ", Currency: " + currency);
+        }
+    }
+
+    private void writeToNotepad(String content) {
+        try (FileWriter writer = new FileWriter("test_results.txt", true)) {
+            writer.write(content + "\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
