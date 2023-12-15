@@ -17,17 +17,17 @@ public class SubscribePage {
     }
 
     public WebElement getPackageTypeElement(String country) {
-        String xpath = "//label[contains(text(), '" + country + "')]/following-sibling::span";
+        String xpath = "//label[contains(text(), '" + country + "')]/following-sibling::span";         \\xpath:  /html//a[@id='الأساسية-selection']
         return driver.findElement(By.xpath(xpath));
     }
 
     public WebElement getPackagePriceElement(String country) {
-        String xpath = "//label[contains(text(), '" + country + "')]/following-sibling::div/span";
+        String xpath = "//label[contains(text(), '" + country + "')]/following-sibling::div/span";     \\xpath: /html//div[@id='main']/div[@class='container']/div[3]/div[3]/div[@class='plan-names']/div[@class='classic']
         return driver.findElement(By.xpath(xpath));
     }
 
     public WebElement getCurrencyElement(String country) {
-        String xpath = "//label[contains(text(), '" + country + "')]/preceding-sibling::span";
+        String xpath = "//label[contains(text(), '" + country + "')]/preceding-sibling::span";       \\xpath: //div[@id='currency-الأساسية']/b[.='0.5']
         return driver.findElement(By.xpath(xpath));
     }
 }
