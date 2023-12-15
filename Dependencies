@@ -1,0 +1,25 @@
+Dependencies
+Add the necessary dependencies to your pom.xml file:
+
+org.seleniumhq.selenium selenium-java 3.141.59
+<!-- TestNG -->
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.1.0</version>
+    <scope>test</scope>
+</dependency>
+
+<!-- WebDriverManager -->
+<dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>4.4.3</version>
+</dependency>
+
+<!-- Log4j -->
+<dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-core</artifactId>
+    <version>2.14.1</version>
+</dependency>
