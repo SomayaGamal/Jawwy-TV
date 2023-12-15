@@ -17,7 +17,7 @@ public class SubscribeTest extends BaseTest {
     public void validateSubscriptionPackages() {
         SubscribePage subscribePage = new SubscribePage(driver);
 
-        String[] countries = {"Country1", "Country2", "Country3"};
+        String[] countries = {"Country1", "Country2", "Country3"};   \\ "مصر" ,"اليمن" ,"فلسطين"
 
         for (String country : countries) {
             String packageType = subscribePage.getPackageTypeElement(country).getText();
